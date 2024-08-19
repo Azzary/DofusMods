@@ -1,0 +1,74 @@
+# Fichiers et dossiers spécifiques à Visual Studio
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Fichiers et dossiers de build
+DLL/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Fichiers de projet Visual Studio
+*.csproj
+*.sln
+
+# Fichiers de packages NuGet
+*.nupkg
+# Dossier packages NuGet
+**/packages/*
+# Sauf build/, qui est utilisé comme un MSBuild target.
+!**/packages/build/
+
+# Fichiers de cache et options
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Fichiers générés par Visual Studio
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# Fichiers de test
+TestResults/
+
+# Autres
+.DS_Store
+Thumbs.db
