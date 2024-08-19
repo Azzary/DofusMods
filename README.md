@@ -26,3 +26,6 @@
 
 - Press F10 to open/close mod menu
 - Use toggles to activate features
+
+
+![Demo](https://github.com/Azzary/DofusMods/blob/main/Img/cap.png)
