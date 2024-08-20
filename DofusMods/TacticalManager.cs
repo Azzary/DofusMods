@@ -11,11 +11,15 @@ namespace DofusMods
 
         private void Awake()
         {
-            CreateQuantumConsole();
+            FindQuantumConsole();
         }
 
         private void Update()
         {
+            if(_quantumConsole == null)
+            {
+                FindQuantumConsole();
+            }
             if (_tacticalInFightEnabled)
             {
                 bool isInFight = Player.IsInFight();
@@ -30,25 +34,23 @@ namespace DofusMods
             }
         }
 
-        private void CreateQuantumConsole()
+        private void FindQuantumConsole()
         {
-            GameObject qcObject = new GameObject("QuantumConsole");
-            if (qcObject == null)
-            {
-                Debug.LogError("Failed to create QuantumConsole GameObject.");
-                return;
-            }
-            _quantumConsole = qcObject.AddComponent<QuantumConsole>();
+            _quantumConsole = FindObjectOfType<QuantumConsole>();
             if (_quantumConsole != null)
             {
-                _quantumConsole.Awake();
-                _quantumConsole.gameObject.SetActive(true);
-                Debug.Log("QuantumConsole created and activated.");
+                Debug.LogError("FindObjectOfType find object");
+                _quantumConsole.Activate();
+                return;
             }
-            else
+            _quantumConsole = Resources.FindObjectsOfTypeAll<QuantumConsole>().FirstOrDefault();
+            if (_quantumConsole != null)
             {
-                Debug.LogError("Failed to create QuantumConsole.");
+                Debug.LogError("Resources.FindObjectsOfTypeAll find object");
+                _quantumConsole.Activate();
+                return;
             }
+            Debug.LogError("QuantumConsole not found anywhere.");
         }
 
         public void ToggleTactical()
@@ -62,7 +64,6 @@ namespace DofusMods
             else
             {
                 Debug.LogError("QuantumConsole is not available or not active. Unable to toggle tactical mode.");
-                CreateQuantumConsole();
             }
         }
 

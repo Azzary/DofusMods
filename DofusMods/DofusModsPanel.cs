@@ -90,7 +90,8 @@ namespace DofusMods
             _speedBoostComponent = Resources.FindObjectsOfTypeAll<SpeedBoostComponent>().FirstOrDefault();
             if (_speedBoostComponent == null)
             {
-                Debug.LogError("SpeedBoostComponent not found anywhere.");
+                Debug.LogError("SpeedBoostComponent not found anywhere in");
+                
             }
 
             _tacticalManager = Resources.FindObjectsOfTypeAll<TacticalManager>().FirstOrDefault();
@@ -102,6 +103,7 @@ namespace DofusMods
 
         private void ToggleTactical()
         {
+            FindComponents();
             if (_tacticalManager != null)
             {
                 _tacticalManager.ToggleTactical();
@@ -115,6 +117,7 @@ namespace DofusMods
 
         private void OnTacticalInFightToggled(bool value)
         {
+            FindComponents();
             if (_tacticalManager != null)
             {
                 _tacticalManager.SetTacticalInFight(value);
