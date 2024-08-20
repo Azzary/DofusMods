@@ -1,6 +1,5 @@
 # DofusMods
 
-## doesn't work perfectly
 
 ## Setup:
 
